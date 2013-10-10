@@ -1,4 +1,6 @@
 function Session(session) {
+    session = session || {};
+
     return {
         title: session.title || "No title",
         description: session.description || "No description",
@@ -7,6 +9,8 @@ function Session(session) {
 }
 
 function TimeSlot(timeSlot) {
+    timeSlot = timeSlot || {};
+
     return {
         timeSlotCode: timeSlot.timeSlotCode || Date.now(),
         start: timeSlot.start || new Date(),
@@ -16,12 +20,16 @@ function TimeSlot(timeSlot) {
 }
 
 function Track(track) {
+    track = track || {};
+
     return {
         name: track.name || "No name"
     };
 }
 
 function Booking(booking) {
+    booking = booking || {};
+
     return {
         timeSlot: booking.timeSlot || new TimeSlot(),
         track: booking.track || new Track(),
