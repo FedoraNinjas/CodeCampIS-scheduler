@@ -25,4 +25,13 @@
         agendaTable.find("thead tr").append($("<td/>", {text: track.name}));
     });
 
+    var groupedBookings = _.groupBy(agenda.bookings, function(booking) {
+        return booking.timeSlot.start;
+    });
+
+    _.each(groupedBookings, function(group, key) {
+        group = _.sortBy(group, function(session) {
+            return session.track.name;
+        });
+    });
 })();
