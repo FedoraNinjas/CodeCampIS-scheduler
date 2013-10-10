@@ -14,4 +14,10 @@
 
         return filteredSessions[0] || null;
     });
+
+    var agendaTable = $("#agenda table");
+    $.each(agenda.tracks, function(i, track) {
+        agendaTable.find("thead tr").append($("<td/>", {text: track.name}));
+    });
+
 })();
